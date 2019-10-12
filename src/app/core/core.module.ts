@@ -7,8 +7,18 @@ import { AlertModule } from '../shared/components/alert/alert.module';
 import { LoadingModule } from '../shared/components/loading/loading.module';
 import { MenuModule } from '../shared/components/menu/menu.module';
 import { ShowIfLoggedModule } from '../shared/directives/show-if-logged/show-if-logged.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
+    declarations: [
+        HeaderComponent,
+        FooterComponent
+    ],
+    exports: [
+        HeaderComponent,
+        FooterComponent
+    ],
     imports: [
         CommonModule,
         RouterModule,

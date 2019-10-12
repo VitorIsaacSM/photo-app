@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,7 +16,8 @@ import { ErrorsModule } from './errors/errors.module';
     BrowserModule,
     AppRoutingModule,
     PhotosModule,
-    ErrorsModule
+    ErrorsModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

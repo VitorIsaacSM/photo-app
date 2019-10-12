@@ -1,3 +1,7 @@
+import { RouterModule } from '@angular/router';
+import { CardModule } from './../shared/components/card/card.module';
+import { SearchComponent } from './photo-list/search/search.component';
+import { PhotosComponent } from './photo-list/photos/photos.component';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,12 +21,16 @@ import { LoadButtonComponent } from './photo-list/load-button/load-button.compon
         PhotoFormComponent,
         filterByDescription,
         lengthZero,
-        LoadButtonComponent
+        LoadButtonComponent,
+        PhotosComponent,
+        SearchComponent
 
     ],
     imports: [
         HttpClientModule,
-        CommonModule
+        CommonModule,
+        CardModule,
+        RouterModule
     ],
     exports: [
         PhotoListComponent

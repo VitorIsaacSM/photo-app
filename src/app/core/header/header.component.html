@@ -1,0 +1,36 @@
+<header class="fixed-top">
+
+    <nav class="navbar navbar-light bg-white">
+        <a class="navbar-brand">
+            <i tabindex="0" (keyup.space)="menu.toggle()" (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
+            PHOTO-APP
+        </a>
+        
+        <app-menu #menu>
+            <ul class="list-unstyled">
+                <li>
+                    <a showIfLogged [routerLink]="['p','add']">Upload</a>
+                </li>
+            </ul>
+        </app-menu>
+
+        <div *ngIf="(user$ | async) as user; else login">
+            <i class="fa fa-user-circle mr-1"></i>
+            <a class="mr-1">{{ user.name}}</a>
+            <div class="sair">
+                <a (click)="logout()">(Sair)</a>
+            </div>
+        </div>
+
+        <ng-template #login>
+            <span class="navbar-text">
+                <a [routerLink]="['']">Faça login para continuar!</a>
+            </span>
+        </ng-template> 
+    </nav>
+    <div class="fixed-top">
+        <app-loading></app-loading>
+        <app-alert></app-alert>
+    </div>
+</header>
+
