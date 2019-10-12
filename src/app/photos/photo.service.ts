@@ -1,8 +1,9 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Photo } from './photo';
 
-const API: string = 'http://localhost:3000/'
+const API = environment.ApiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class PhotoService {
 
   ListFromServer(userName: string){
     return this.http
-    .get<Photo[]>( API + userName + '/photos');
+    .get<Photo[]>( API + '/' + userName + '/photos');
   }
 
   listFromUserPaginated(userName: string, page: number) {
@@ -21,7 +22,7 @@ export class PhotoService {
         .append('page', page.toString());
 
     return this.http
-        .get<Photo[]>(API + userName + '/photos', { params: params });
+        .get<Photo[]>(API + '/' + userName + '/photos', { params: params });
   }
   
 }

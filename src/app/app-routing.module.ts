@@ -16,14 +16,21 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomeModule'
   },   
-  { path: 'user/:userName',
+  { 
+    path: 'user/:userName',
     component: PhotoListComponent,
     resolve: {
       photos: PhotoListResolver
     }
   },
-  { path: 'p/add', component: PhotoFormComponent},
-  { path: '**', component: NotFoundComponent}
+  { 
+    path: 'p/add',
+    component: PhotoFormComponent
+  },
+  { 
+    path: '**',
+    component: NotFoundComponent
+  }
 ];
 
 @NgModule({

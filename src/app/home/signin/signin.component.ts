@@ -5,7 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { PlatformDetectorService } from '../../core/plataform-detector/platform-detector.service';
 
 @Component({
-    templateUrl: './signin.component.html'
+    templateUrl: './signin.component.html',
+    styleUrls: ['./signin.component.css']
 })
 export class SignInComponent implements OnInit {
     
@@ -29,8 +30,7 @@ export class SignInComponent implements OnInit {
             userName: ['', Validators.required],
             password: ['', Validators.required]
         });
-        this.platformDetectorService.isPlatformBrowser() && 
-        this.userNameInput.nativeElement.focus();        
+        this.platformDetectorService.isPlatformBrowser()       
     } 
 
     login() {
