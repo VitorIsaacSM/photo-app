@@ -1,25 +1,15 @@
-<div>
-  <form class="input" >
-      <input 
-        type="search"
-        placeholder="search..."
-        autofocus
-        (keyup)="debounce.next($event.target.value)"
-      >
-  </form>
-</div>
+<app-search 
+    (onTyping)="filter = $event" [value]="filter">
+</app-search>
 
-<ul>
-  <li *ngFor="let photo of photos | filterByDescription : filter" class="responsive">
-    <app-photo 
-      [url]="photo.url" 
-      [description]="photo.description">
-    </app-photo>
-  </li>
-</ul>
-<app-load-button [hasMore]="hasMore" (click)="load()"></app-load-button>
+<app-photos 
+    [photos]="photos | filterByDescription: filter">
+</app-photos>
 
-<p *ngIf="photos | lengthZero : filter">Sorry Not found...</p>
+<app-load-button 
+    (click)="load()" 
+    [hasMore]="hasMore">
+</app-load-button>
 
 
 

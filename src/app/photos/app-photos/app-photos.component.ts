@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -5,16 +6,22 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './app-photos.component.html',
   styleUrls: ['./app-photos.component.css']
 })
-export class AppPhotosComponent implements OnInit {
+export class AppPhotosComponent {
 
-  @Input('description') description: string = '';
+  private _url = '';
 
-  @Input('url') url: string = '';
+    @Input() description='';
+    
+    @Input() set url(url: string)  {
+        if(!url.startsWith('data')) {
+            this._url = `${environment.ApiUrl}/imgs/` + url;
+        } else {
+            this._url = url;
+        }
+    }
 
-  constructor() { }
-
-  ngOnInit() {
-
-  }
+    get url() {
+        return this._url;
+    }
 
 }

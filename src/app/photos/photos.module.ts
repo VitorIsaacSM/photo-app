@@ -1,3 +1,4 @@
+import { PhotoDetailsModule } from './photo-details/photo-details.module';
 import { RouterModule } from '@angular/router';
 import { CardModule } from './../shared/components/card/card.module';
 import { SearchComponent } from './photo-list/search/search.component';
@@ -12,25 +13,27 @@ import { PhotoFormComponent } from './photo-form/photo-form.component';
 import { filterByDescription } from './photo-list/filter.pipe';
 import { lengthZero } from './photo-list/lengthZero.pipe';
 import { LoadButtonComponent } from './photo-list/load-button/load-button.component';
+import { PhotoFormModule } from './photo-form/photo-form.module';
+import { AppPhotosModule } from './app-photos/app-photos.module';
 
 
 @NgModule({
     declarations: [
-        AppPhotosComponent, 
         PhotoListComponent,
-        PhotoFormComponent,
         filterByDescription,
         lengthZero,
         LoadButtonComponent,
         PhotosComponent,
         SearchComponent
-
     ],
     imports: [
         HttpClientModule,
         CommonModule,
         CardModule,
-        RouterModule
+        RouterModule,
+        PhotoDetailsModule,
+        PhotoFormModule,
+        AppPhotosModule
     ],
     exports: [
         PhotoListComponent
