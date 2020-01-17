@@ -1,5 +1,5 @@
-<div class="container">
-  <form [formGroup]="photoForm" class="row" (submit)="upload()">
+<div class="container d-flex justify-content-center align-items-center">
+  <form [formGroup]="photoForm" class="row w-100" (submit)="upload()">
     <div class="col-md-6 text-center">
       <div class="form-group" *ngIf="!preview; else previewImage">
         <button immediateClick type="button" (click)="fileInput.click()" class="btn btn-primary">
@@ -14,7 +14,7 @@
           (change)="handleFile($event.target.files[0])"
         >
         <app-vmessage
-          text="Please, select a photo" 
+          text="Por favor, selecione uma foto" 
           *ngIf="photoForm.get('file').errors?.required"
         >
         </app-vmessage>
@@ -34,17 +34,17 @@
         <textarea 
           formControlName="description" 
           class="form-control form-control-sm" 
-          placeholder="photo description"></textarea>
-          <app-vmessage
-            text="Max length is 300" 
-            *ngIf="photoForm.get('description').errors?.maxlength"
-          >
+          placeholder="Descrição da foto">
+        </textarea>
+        <app-vmessage
+          text="Max length is 300" 
+          *ngIf="photoForm.get('description').errors?.maxlength">
         </app-vmessage>          
       </div>
 
       <div class="form-group">
         <label class="text-muted">
-          Allow comments
+          Permitir comentários
           <input formControlName="allowComments"  type="checkbox">
         </label> 
       </div>

@@ -11,13 +11,14 @@ import { userNamePassword } from './username-password.validator';
 
 @Component({
     templateUrl: './signup.component.html',
+    styleUrls: ['../signin/signin.component.css'],
     providers: [ UserNotTakenValidatorService ]
 })
 export class SignUpComponent implements OnInit {
-    
+
     signupForm: FormGroup;
     @ViewChild('emailInput') emailInput: ElementRef<HTMLInputElement>;
-    
+
     constructor(
         private formBuilder: FormBuilder,
         private userNotTakenValidatorService: UserNotTakenValidatorService,
