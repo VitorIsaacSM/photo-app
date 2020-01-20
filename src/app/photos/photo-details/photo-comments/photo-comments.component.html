@@ -1,4 +1,5 @@
 <div *ngIf="(comments$ | async) as comments">
+    <p>Comentários:</p>
     <ul class="list-unstyled comment-list">
         <li *ngFor="let comment of comments">
             <a 
@@ -19,7 +20,7 @@
                         [disabled]="commentForm.invalid" 
                         type="submit" 
                         class="btn btn-primary pull-left">
-                            Publish
+                            Publicar
                     </button>
                 </div>
             </div>

@@ -11,7 +11,9 @@
                     <i (click)="like(photo)" showIfLogged class="fa fa-heart-o fa-2x mr-2 pull-left">
                         {{ photo.likes }}
                     </i>                    
-                    <i class="fa fa-comment-o fa-2x mr-2 ml-2"></i>{{ photo.comments }}
+                    <i class="fa fa-comment-o fa-2x mr-2 ml-2">
+                        {{ photo.comments }}
+                    </i>
                     <i photoOwnerOnly [ownedPhoto]="photo" (click)="remove()" class="fa fa-trash-o fa-2x pull-right"></i>
                 </div>                
                 <hr>
