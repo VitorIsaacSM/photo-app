@@ -1,7 +1,7 @@
 <div class="bg-white border" *ngIf="(photo$ | async) as photo">
     <div class="row">
         <div class="col-lg-8">
-            <app-photo [url]="photo.url" [description]="photo.description"></app-photo>
+            <img class="w-100 p-5" [src]="getUrl(photo.url)" [alt]="photo.description">
         </div>
 
         <div class="col-lg-4 p-4">

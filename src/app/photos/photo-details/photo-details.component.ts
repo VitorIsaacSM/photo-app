@@ -6,6 +6,7 @@ import { AlertService } from "../../shared/components/alert/alert.service";
 import { UserService } from "../../core/user/user.service";
 import { PhotoService } from '../photo.service';
 import { Photo } from '../photo';
+import { environment } from 'src/environments/environment';
 
 @Component({
     templateUrl: './photo-details.component.html'
@@ -54,5 +55,12 @@ export class PhotoDetailsComponent implements OnInit {
                     this.photo$ = this.photoService.findById(photo.id);
                 }
             });
+    }
+
+    getUrl(url: string)  {
+        if (!url.startsWith('data')) {
+            return `${environment.ApiUrl}/imgs/` + url;
+        }
+        return url;
     }
 }
