@@ -3,7 +3,7 @@
     <nav class="navbar navbar-light bg-white">
         <a class="navbar-brand">
             <i tabindex="0" (keyup.space)="menu.toggle()" (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
-            PHOTO-APP
+            <span class="pointer" [routerLink]="['']">PHOTO-APP</span>
         </a>
         
         <app-menu #menu>

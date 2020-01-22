@@ -1,10 +1,10 @@
 <div class="text-center mt-3 mb-3">
-    <form>
-        <i aria-hidden="true" class="fa fa-search mr-1"></i>
+    <form class="form-group d-flex align-items-center justify-content-center">
+        <i aria-hidden="true" class="fa fa-search mr-2"></i>
         <input 
-            class="rounded" 
+            class="form-control w-25" 
             type="search" 
-            placeholder="search..." 
+            placeholder="Pesquisar imagens..." 
             autofocus
             (keyup)="debounce.next($event.target.value)"
             [value]="value"

@@ -8,7 +8,7 @@
             <input #userNameInput
                 formControlName="userName" 
                 class="form-control" 
-                placeholder="nome de usuario">
+                placeholder="Nome de usuário">
             <app-vmessage 
                 *ngIf="loginForm.get('userName').errors?.required && loginForm.get('userName').touched"
                 text="Nome de usuario é obrigatório!">
@@ -20,7 +20,7 @@
                 formControlName="password" 
                 type="password" 
                 class="form-control" 
-                placeholder="senha">
+                placeholder="Senha">
             <app-vmessage
                 *ngIf="loginForm.get('password').errors?.required && loginForm.get('password').touched"
                 text="Senha é obrigatória!">

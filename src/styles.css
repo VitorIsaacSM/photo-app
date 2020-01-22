@@ -53,3 +53,7 @@ table {
     width: 24%;
     height: auto;
 }
+
+.pointer {
+	cursor: pointer;
+}
