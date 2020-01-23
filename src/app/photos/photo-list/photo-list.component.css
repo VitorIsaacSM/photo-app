@@ -14,3 +14,28 @@ p {
     font-size: 200%;
     font-family: sans-serif;
 }
+
+.pop-text {
+    position: relative;
+}
+
+.pop-text i {
+    padding-right: 0;
+    transition: padding-right 0.1s ease-out;
+}
+
+.pop-text:hover i {
+    padding-right: 100px;
+    transition: padding-right 0.2s ease-in;
+}
+
+.pop-text span {
+    white-space: nowrap;
+    position: absolute;
+    right: -500px;
+}
+
+.pop-text:hover span {
+    right: 0;
+    transition: right 0.2s ease-out;
+}

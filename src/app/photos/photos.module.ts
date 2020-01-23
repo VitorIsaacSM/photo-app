@@ -15,6 +15,7 @@ import { lengthZero } from './photo-list/lengthZero.pipe';
 import { LoadButtonComponent } from './photo-list/load-button/load-button.component';
 import { PhotoFormModule } from './photo-form/photo-form.module';
 import { AppPhotosModule } from './app-photos/app-photos.module';
+import { DarkenOnHoverModule } from '../shared/directives/darken-on-hover/darken-on-hover.module';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AppPhotosModule } from './app-photos/app-photos.module';
         RouterModule,
         PhotoDetailsModule,
         PhotoFormModule,
-        AppPhotosModule
+        AppPhotosModule,
+        DarkenOnHoverModule
     ],
     exports: [
         PhotoListComponent

@@ -1,16 +1,15 @@
-<app-search 
-    (onTyping)="filter = $event" [value]="filter">
-</app-search>
+<div>
+  <div class="d-flex align-items-center justify-content-between p-3">
+    <app-search (onTyping)="filter = $event" [value]="filter"> </app-search>
+    <div class="d-flex align-items-center text-primary pointer pop-text" [routerLink]="'/p/add'">
+      <i class="fa fa-plus-circle fa-2x mr-2"></i>
+      <span>Adicionar foto</span>
+    </div>
+  </div>
 
-<app-photos 
-    [photos]="photos | filterByDescription: filter">
-</app-photos>
+  <app-photos [photos]="photos | filterByDescription: filter"> </app-photos>
 
-<app-load-button 
-    (click)="load()" 
-    [hasMore]="hasMore">
-</app-load-button>
-
-
-
-
+  <div class="m-4">
+    <app-load-button (click)="load()" [hasMore]="hasMore"> </app-load-button>
+  </div>
+</div>

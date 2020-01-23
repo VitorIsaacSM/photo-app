@@ -8,15 +8,15 @@ import { map } from "rxjs/operators";
     templateUrl: './loading.component.html',
     styleUrls: ['loading.component.css']
 })
-export class LoadingComponent implements OnInit { 
+export class LoadingComponent implements OnInit {
 
     loading$: Observable<string>;
 
     constructor(private loadingService: LoadingService) {}
-    
+
     ngOnInit(): void {
         this.loading$ = this.loadingService
             .getLoading()
-            .pipe(map(loadingType => loadingType.valueOf()))
+            .pipe(map(loadingType => loadingType.valueOf()));
     }
 }

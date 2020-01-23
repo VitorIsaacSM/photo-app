@@ -1,27 +1,29 @@
 <div class="bg-white border" *ngIf="(photo$ | async) as photo">
     <div class="row">
         <div class="col-lg-8">
-            <img class="w-100 p-5" [src]="getUrl(photo.url)" [alt]="photo.description">
+            <img class="w-100 p-5" style="max-height: 75vh; object-fit: contain;" [src]="getUrl(photo.url)" [alt]="photo.description">
         </div>
 
         <div class="col-lg-4 p-4">
             <small>
-                <p class="text-left break-word">{{ photo.description }}</p>
-                <div class="text-left mb-4">
-                    <i (click)="like(photo)" showIfLogged class="fa fa-heart-o fa-2x mr-2 pull-left">
-                        {{ photo.likes }}
-                    </i>                    
-                    <i class="fa fa-comment-o fa-2x mr-2 ml-2">
-                        {{ photo.comments }}
-                    </i>
-                    <i photoOwnerOnly [ownedPhoto]="photo" (click)="remove()" class="fa fa-trash-o fa-2x pull-right"></i>
+                <h3 class="text-left break-word">{{ photo.description }}</h3>
+                <div class="text-left mb-4 d-flex justify-content-between">
+                    <div class="icones-numero">
+                        <i (click)="like(photo)" title="curtir" showIfLogged class="fa fa-thumbs-o-up fa-2x mr-2 pull-left expand-on-hover">
+                        </i>                    
+                        <span>{{ photo.likes }}</span>
+                        <i class="fa fa-comment-o fa-2x mr-2 ml-4">
+                        </i>
+                        <span>{{ photo.comments }}</span>
+                    </div>
+                    <i photoOwnerOnly [ownedPhoto]="photo" title="Excluir foto" (click)="remove()" class="fa fa-trash-o fa-2x pull-right pointer expand-on-hover"></i>
                 </div>                
                 <hr>
             </small>
 
             <ap-photo-comments 
                 *ngIf="photo.allowComments; else warnning"
-                [photoId]="photoId">
+                [photo]="photo">
             </ap-photo-comments>
             <ng-template #warnning>
                 <p>O usuário desabilitou os comentarios para esta foto.</p>

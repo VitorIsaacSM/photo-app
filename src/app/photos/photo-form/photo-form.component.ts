@@ -32,7 +32,7 @@ export class PhotoFormComponent implements OnInit {
   ngOnInit() {
     this.photoForm = this.formBuilder.group({
       file: ['', Validators.required],
-      description: ['', Validators.maxLength(300)],
+      description: ['', [Validators.maxLength(30), Validators.required]],
       allowComments: [true]
     })
   }

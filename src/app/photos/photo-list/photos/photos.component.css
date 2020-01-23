@@ -1,0 +1,22 @@
+.d-flex {
+    flex-wrap: wrap;
+}
+
+.foto {
+    flex: 0 0 500px;
+    margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .foto {
+        flex: 0 0 440px;
+        margin: 5px;
+    }    
+}
+
+@media screen and (max-width: 500px) {
+    .foto {
+        flex: 0 0 300px;
+        margin: 5px;
+    }    
+}

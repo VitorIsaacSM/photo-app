@@ -6,6 +6,7 @@ import { FormGroup } from "@angular/forms";
 import { switchMap, tap } from 'rxjs/operators';
 import { PhotoComment } from '../../photo-comment';
 import { PhotoService } from '../../photo.service';
+import { Photo } from '../../photo';
 
 @Component({
     selector: 'ap-photo-comments',
@@ -14,7 +15,7 @@ import { PhotoService } from '../../photo.service';
 })
 export class PhotoCommentsComponent implements OnInit { 
 
-    @Input() photoId: number;
+    @Input() photo: Photo;
     commentForm: FormGroup;
     
     comments$: Observable<PhotoComment[]>;
@@ -25,7 +26,7 @@ export class PhotoCommentsComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.comments$ = this.photoService.getComments(this.photoId);
+        this.comments$ = this.photoService.getComments(this.photo.id);
         this.commentForm = this.formBuilder.group({
             comment: ['', Validators.maxLength(300)]
         });
@@ -34,10 +35,11 @@ export class PhotoCommentsComponent implements OnInit {
     save() {
         const comment = this.commentForm.get('comment').value as string;
         this.comments$ = this.photoService
-            .addComment(this.photoId, comment)
-            .pipe(switchMap(() => this.photoService.getComments(this.photoId)))
+            .addComment(this.photo.id, comment)
+            .pipe(switchMap(() => this.photoService.getComments(this.photo.id)))
             .pipe(tap(() => {
                 this.commentForm.reset();
+                this.photo.comments++;
             }));
     }
 }

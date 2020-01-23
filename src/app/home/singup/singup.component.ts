@@ -60,9 +60,6 @@ export class SignUpComponent implements OnInit {
         }, {
             validator: userNamePassword
         });
-
-        this.platformDetectorService.isPlatformBrowser() && 
-            this.emailInput.nativeElement.focus();    
     } 
 
     signup() {

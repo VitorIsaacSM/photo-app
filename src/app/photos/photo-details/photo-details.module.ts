@@ -9,6 +9,7 @@ import { VMessageModule } from "../../shared/components/vmessage/vmessage.module
 import { PhotoOwnerOnlyDirective } from "./photo-owner-only/photo-owner-only.directive";
 import { ShowIfLoggedModule } from "../../shared/directives/show-if-logged/show-if-logged.module";
 import { AppPhotosModule } from '../app-photos/app-photos.module';
+import { DarkenOnHoverModule } from 'src/app/shared/directives/darken-on-hover/darken-on-hover.module';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { AppPhotosModule } from '../app-photos/app-photos.module';
         ReactiveFormsModule,
         VMessageModule,
         ShowIfLoggedModule,
-        AppPhotosModule
+        AppPhotosModule,
+        DarkenOnHoverModule
     ]
 })
 export class PhotoDetailsModule { }
