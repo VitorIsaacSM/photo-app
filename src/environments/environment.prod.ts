@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: false,
+  ApiUrl: 'https://api-photo-app.herokuapp.com',
+  serverLog: 'http://localhost:7000'
 };
