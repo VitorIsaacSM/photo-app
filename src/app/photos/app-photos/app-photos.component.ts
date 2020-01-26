@@ -1,5 +1,5 @@
 import { environment } from './../../../environments/environment';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-photo',
@@ -10,7 +10,8 @@ export class AppPhotosComponent {
 
   private _url = '';
 
-    @Input() description='';
+    @Input() description = '';
+    @Output() eventFinishLoad = new EventEmitter<boolean>(false);
     
     @Input() set url(url: string)  {
         if(!url.startsWith('data')) {

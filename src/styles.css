@@ -30,8 +30,13 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-    line-height: 1;
-    padding: 5px;
+	line-height: 1;
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.85) 100%);
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.88) 0%,rgba(255,255,255,0.85) 100%);
+	background: radial-gradient(ellipse at center,  rgba(255,255,255,0.88) 0%,rgba(255,255,255,0.85) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ffffff', endColorstr='#d9ffffff',GradientType=1 );
+
+	min-height: 80vh;
 }
 ol, ul {
 	list-style: none;
@@ -84,4 +89,8 @@ i.expand-on-hover:hover {
 	transform: scale(1.3);
 	transition: transform 0.1s linear;
 	cursor: pointer;
+}
+
+.bg {
+	background-color: rgb(255, 253, 253);
 }

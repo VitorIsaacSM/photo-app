@@ -37,4 +37,21 @@
     </form>
     
     <p class="mt-3">Não possui uma conta? <a [routerLink]="['signup']">Registre-se agora</a></p>
+
+    <div *ngIf="userList.length > 0">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ranking de Usuários:
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="pointer" *ngFor="let user of userList; let i = index">
+                    <td title="Ver perfil" (click)="openUser(user.name)">#{{i + 1}} - {{user.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

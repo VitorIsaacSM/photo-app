@@ -1,8 +1,8 @@
-<div class="d-flex justify-content-center align-items-center no-gutters">
+<div class="my-grid">
   <div *ngFor="let photo of photos" class="foto" appDarkenOnHover>
     <a [routerLink]="['/p', photo.id]">
       <app-card [title]="photo.description">
-        <app-photo [url]="photo.url" [description]="photo.description">
+        <app-photo [url]="photo.url" [description]="photo.description" (eventFinishLoad)="showImage[photo.id] = $event">
         </app-photo>
         <div class="text-center p-1">
           <i aria-hidden="true" class="fa fa-thumbs-o-up fa-1x mr-2"></i

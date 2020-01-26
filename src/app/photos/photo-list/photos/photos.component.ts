@@ -10,6 +10,7 @@ import { Photo } from '../../photo';
 export class PhotosComponent  {
 
   @Input() photos: Photo[] = [];
+  showImage = {};
 
   constructor() { }
 }

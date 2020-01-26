@@ -1,8 +1,3 @@
-li {
-    display: inline-block;
-    margin: 0.1%;
-}
-
 .input {
     text-align: center;
     padding: 10px
@@ -16,6 +11,7 @@ p {
 }
 
 .pop-text {
+    overflow: hidden;
     position: relative;
 }
 
@@ -33,9 +29,38 @@ p {
     white-space: nowrap;
     position: absolute;
     right: -500px;
+    opacity: 0;
 }
 
 .pop-text:hover span {
     right: 0;
-    transition: right 0.2s ease-out;
+    opacity: 1;
+    transition: right 0.2s ease-out, opacity 0.2s ease-in;
+}
+
+
+.user-search {
+    position: relative;
+}
+
+.user-list {
+    position: absolute;
+    top: 55px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 200px;
+    right: 0;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 1px 1px 8px #00000042;
+}
+
+.user-list div {
+    padding: 10px;
+}
+
+.user-list div:hover {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
 }

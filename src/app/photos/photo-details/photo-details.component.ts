@@ -48,6 +48,9 @@ export class PhotoDetailsComponent implements OnInit {
     }
 
     like(photo: Photo) {
+        if (!this.isLogged) {
+            return;
+        }
         this.photoService
             .like(photo.id)
             .subscribe(liked => {
@@ -62,5 +65,9 @@ export class PhotoDetailsComponent implements OnInit {
             return `${environment.ApiUrl}/imgs/` + url;
         }
         return url;
+    }
+
+    get isLogged(): boolean {
+        return this.userService.isLogged();
     }
 }

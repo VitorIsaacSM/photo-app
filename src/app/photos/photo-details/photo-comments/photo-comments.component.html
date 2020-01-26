@@ -17,7 +17,7 @@
                 <textarea formControlName="comment" class="form-control"></textarea>
                 <div class="input-group-append">
                     <button 
-                        [disabled]="commentForm.invalid" 
+                        [disabled]="commentForm.invalid || !isLogged" 
                         type="submit" 
                         class="btn btn-primary pull-left">
                             Comentar

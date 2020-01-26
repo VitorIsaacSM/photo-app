@@ -1,3 +1,12 @@
+.my-grid {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-auto-rows: calc(25vw + 12vh);
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: center;
+}
+
 .d-flex {
     flex-wrap: wrap;
 }
@@ -7,16 +16,23 @@
     margin: 5px;
 }
 
-@media screen and (max-width: 768px) {
-    .foto {
-        flex: 0 0 440px;
-        margin: 5px;
-    }    
+
+@media screen and (min-width: 1920px) {
+    .my-grid {
+        grid-template-columns: 26% 26% 26%;
+    }
 }
 
-@media screen and (max-width: 500px) {
-    .foto {
-        flex: 0 0 300px;
-        margin: 5px;
-    }    
+@media screen and (max-width: 1365px) {
+    .my-grid {
+        grid-template-columns: 40% 40%;
+        grid-auto-rows: calc(30vw + 12vh);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .my-grid {
+        grid-template-columns: 65%;
+        grid-auto-rows: calc(40vw + 20vh);
+    }  
 }

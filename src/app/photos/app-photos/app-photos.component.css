@@ -1,5 +1,17 @@
 .responsive {
-    object-fit: fill;
+    object-fit: cover;
     width: 100%;
-    height: 450px;
+    height: 25vw;
+}
+
+@media screen and (max-width: 1365px) {
+    .responsive {
+        height: 30vw
+    }
+}
+
+@media screen and (max-width: 750px) { 
+    .responsive {
+        height: 45vw;
+    }
 }

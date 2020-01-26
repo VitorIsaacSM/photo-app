@@ -7,6 +7,7 @@ import { switchMap, tap } from 'rxjs/operators';
 import { PhotoComment } from '../../photo-comment';
 import { PhotoService } from '../../photo.service';
 import { Photo } from '../../photo';
+import { UserService } from 'src/app/core/user/user.service';
 
 @Component({
     selector: 'ap-photo-comments',
@@ -22,7 +23,8 @@ export class PhotoCommentsComponent implements OnInit {
 
     constructor(
         private photoService: PhotoService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private userService: UserService
     ) {}
 
     ngOnInit(): void {
@@ -41,5 +43,9 @@ export class PhotoCommentsComponent implements OnInit {
                 this.commentForm.reset();
                 this.photo.comments++;
             }));
+    }
+
+    get isLogged(): boolean {
+        return this.userService.isLogged();
     }
 }

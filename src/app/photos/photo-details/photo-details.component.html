@@ -1,5 +1,5 @@
-<div class="bg-white border" *ngIf="(photo$ | async) as photo">
-    <div class="row">
+<div *ngIf="(photo$ | async) as photo">
+    <div class="row m-0">
         <div class="col-lg-8">
             <img class="w-100 p-5" style="max-height: 75vh; object-fit: contain;" [src]="getUrl(photo.url)" [alt]="photo.description">
         </div>
@@ -9,7 +9,7 @@
                 <h3 class="text-left break-word">{{ photo.description }}</h3>
                 <div class="text-left mb-4 d-flex justify-content-between">
                     <div class="icones-numero">
-                        <i (click)="like(photo)" title="curtir" showIfLogged class="fa fa-thumbs-o-up fa-2x mr-2 pull-left expand-on-hover">
+                        <i (click)="like(photo)" title="curtir" class="fa fa-thumbs-o-up fa-2x mr-2 pull-left" [class.expand-on-hover]="isLogged">
                         </i>                    
                         <span>{{ photo.likes }}</span>
                         <i class="fa fa-comment-o fa-2x mr-2 ml-4">
